@@ -8,7 +8,7 @@ object caseclass extends  App {
   case class complexPerson(name : String , age : Int , addressdetails : Array[address])
   val addressobj = new address("Sakthi ",600125)
   val obj = new Person("pradeep",30 ,addressobj)
-  println(obj.name)
+  println(obj.addressdetails)
 
   //  2. Gives a better tostring capablity
   println(obj.toString)

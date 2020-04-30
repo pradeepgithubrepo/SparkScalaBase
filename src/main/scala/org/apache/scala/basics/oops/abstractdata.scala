@@ -26,12 +26,12 @@ object abstractdata extends App {
   trait carnivore{
     def eat(foodtype : String) : Unit={println(s"Iam eating $foodtype")}
   }
-  class crocodile extends carnivore{
-  }
+  class crocodile extends carnivore
 
-  object hyena extends carnivore{
+  object hyena extends dog with carnivore{
     def main(args: Array[String]): Unit = {
       eat("elephant")
+      print(eat)
     }
   }
 }

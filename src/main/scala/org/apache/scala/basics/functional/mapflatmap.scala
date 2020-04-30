@@ -43,6 +43,7 @@ object mapflatmap extends App {
 
   var resultcomb = for {a <- alist
                         b <- blist} yield "Space" + a + "-"+b
+  var plist = for{a <- alist}yield a
   println(resultcomb)
   resultcomb = for {
     a <- alist if (a%2 ==0)

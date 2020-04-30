@@ -15,6 +15,8 @@ object baseobj extends App {
 }
 
 //class combines the fields and methods(member function which defines actions) into a single unit.
+//Constructors are used to initializing the object’s state.
+// constructor  contains a collection of statements that are executed at the time of Object creation.
 class person(name: String, age: Int)
 //This is a constructor . Every single instance must be consturcted by passing in these 2 parms.
 {

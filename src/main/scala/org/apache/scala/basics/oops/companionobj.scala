@@ -5,7 +5,7 @@ package org.apache.scala.basics.oops
 //A companion object is allowed to access both private methods and private fields of the class.
 //https://www.learningjournal.guru/courses/scala/scala-programming-foundation/scala-companion-objects/
 //Purpose - seperation of concerns using companion -> All fields which needs local access in class . Ones for global access in scala
-//implementation of factory method
+//implementation of factory method - You dont have to create a object to access it . Just use apply ethod
 class companionobj {
   def printFilename() = {
     println(companionobj.HiddenFilename)

@@ -7,7 +7,7 @@ object baseobj2 extends App {
   val gokulobj = new Person("Gokul", 30)
   gokulobj.personinfo(perobj)
 
-  class Person(val name: String, age: Int) {
+  class Person( val name: String, age: Int) {
     def personinfo(per: Person): Unit = {
       println(s"${per.name} is here . ${this.name}")
     }
