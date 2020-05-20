@@ -6,6 +6,42 @@ object abstractdata extends App {
 //  Abstract class cannot be instatined by object
 //  Abstract class can have both abstract and non-abstract types
 
+// Abstract class with constructor
+// And the constructor contain two arguments
+abstract class myauthor(name: String,
+                        topic: String)
+{
+  def details()
+}
+
+  // GFG class extends abstract class
+  class GFG(name: String, topic: String) extends
+    myauthor(name, topic)
+  {
+    def details()
+    {
+      println("Author name: " + name)
+      println("Topic name: " + topic)
+    }
+  }
+
+  object Main
+  {
+
+    // Main method
+    def main(args: Array[String])
+    {
+
+      // objects of GFG class
+      var obj = new GFG("Ankita", "Abstract class")
+      obj.details()
+    }
+  }
+
+//Why should you go for abstract class?
+// 1. Abstract class can have constructors while traits cannot
+//  2.Abstract classes are fully interoperable with Java.
+
   abstract  class animal{
   val animaltype : String
   def eat : Unit

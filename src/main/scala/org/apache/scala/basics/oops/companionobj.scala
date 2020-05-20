@@ -7,7 +7,7 @@ package org.apache.scala.basics.oops
 //Purpose - seperation of concerns using companion -> All fields which needs local access in class . Ones for global access in scala
 //implementation of factory method - You dont have to create a object to access it . Just use apply ethod
 class companionobj {
-  def printFilename() = {
+   private def printFilename() = {
     println(companionobj.HiddenFilename)
   }
 }
@@ -17,7 +17,7 @@ object companionobj {
   private val HiddenFilename = "/tmp/foo.bar"
   def main(args: Array[String]): Unit = {
     val compobj = new companionobj
-//    compobj.printFilename()
+    compobj.printFilename()
 
 //    Step 1 to invoke the companionobj.But problem here is we need to create an obj to access the
     val grpobj = new graph
@@ -26,6 +26,10 @@ object companionobj {
   }
 }
 
+object tstobj extends App {
+  val obj = new companionobj
+//  obj.printFilename()
+}
 class graph{
   val numofedges = 100
   val numofvertices = 300

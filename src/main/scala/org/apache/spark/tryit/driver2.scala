@@ -82,7 +82,7 @@ object driver2 extends App with utility {
   newdf.show()
 
   val windowspec = Window.partitionBy("department").orderBy("salary")
-  val partiondf = df.withColumn("row_number",row_number().over(windowspec))
+  val partiondf = df.withColumn("row_number",row_number().over(windowspec)).orderBy(col("department"),col("row_number").desc,col("salary"))
   partiondf.printSchema()
   partiondf.show()
 }

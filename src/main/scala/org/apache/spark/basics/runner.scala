@@ -7,6 +7,10 @@ object runner extends App  with utility {
   val lookup = Map("This" -> "frequent", "is" -> "frequent")
   val lookupbc = sparsses.sparkContext.broadcast(lookup)
 
+  val empty = "hi"
+  val eptyval = sparsses.sparkContext.broadcast(empty)
+  println("Empty va"+ eptyval)
+
   println(lookupbc.value.get("This"))
   def lookupfunc(x : String):(String,String) =
     (x,lookupbc.value.get(x).getOrElse("No Text"))
