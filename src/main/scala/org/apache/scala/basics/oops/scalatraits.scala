@@ -19,10 +19,6 @@ abstract class croc {
   def crocattack() : Unit
 }
 
-abstract class crocsample {
-  def crocattack() : Unit
-}
-
 trait river {
   def riverdrown() = println("River is flowing ")
 }

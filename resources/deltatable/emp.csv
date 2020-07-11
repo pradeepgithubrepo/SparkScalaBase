@@ -1,0 +1,6 @@
+emp_id,dept_id,boss_id,name,salary
+1,1,0,manager,80000
+2,1,1,emp1,60000
+3,1,1,emp2,50000
+4,1,1,emp3,95000
+5,1,1,emp4,75000

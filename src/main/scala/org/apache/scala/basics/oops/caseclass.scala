@@ -3,7 +3,7 @@ package org.apache.scala.basics.oops
 object caseclass extends App {
 
   //  1.Case class will make the class parameters as field values
-  //     2. Brings in additional properties. Has default apply method which manages the construciton of object
+  //  2. Brings in additional properties. Has default apply method which manages the construciton of object
   //  3. Create an object without keyword new
   case class address(building: String, pincode: Int)
 

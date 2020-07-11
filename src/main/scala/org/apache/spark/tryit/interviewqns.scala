@@ -9,7 +9,7 @@ import org.apache.spark.sql.functions.col
 import scala.collection.mutable.ListBuffer
 
 object interviewqns extends App with utility {
-  //  val sparkses = getsparses
+    val sparkses = getsparses
   //1.   Eliminate Invalid Contact Number using Scala/Python
 
   //  import sparkses.implicits._
@@ -104,7 +104,8 @@ object interviewqns extends App with utility {
   //  newlistdf.printSchema()
   //  newlistdf.show()
 
-  //  val salesdf = sparkses.read.option("header", true).option("inferSchema", true).csv("/Users/pradeepp/Desktop/AzureProcesingframework/sales.csv")
+    val salesdf = sparkses.read.option("header", true).option("inferSchema", true).csv("/Users/pradeepp/Desktop/AzureProcesingframework/sales.csv")
+  salesdf.printSchema()
   //    salesdf.createOrReplaceTempView("salestable")
   //    val salesres = sparkses.sql("select CITY,BRANCH,AMOUNT from (select * , DENSE_RANK() OVER(PARTITION BY CITY ORDER BY AMOUNT DESC) as PowerRank from salestable) where PowerRank <=2")
   //    salesres.printSchema()

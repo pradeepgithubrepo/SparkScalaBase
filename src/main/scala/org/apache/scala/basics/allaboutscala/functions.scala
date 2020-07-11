@@ -48,7 +48,7 @@ object functions extends App {
   }
 
   println("************************************** Currying *************************")
-
+//Transforms a function into a chain functions
   def formatter(x: String)(c: Double) = x.format(c)
 
   val threepie = formatter("%3.2f")(_)

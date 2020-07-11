@@ -1,6 +1,6 @@
 package org.apache.spark.basics
 import org.apache.spark.sql.SparkSession
-
+import org.apache.spark.sql.functions.{lit, _}
 object serialiation {
 
   def main(args: Array[String]): Unit = {
@@ -29,6 +29,29 @@ object serialiation {
     tbl1.join(tbl2,Seq("id"),"full").show(false)
     println("Mapjoin join")
     tbl1.join(tbl2.hint("broadcast"),Seq("id")).show(false)
+
+    import sparkses.implicits._
+    val peopleDF = Seq(
+      ("andrea  ", "medellin"),
+      ("rodolfo  ", "medellin"),
+      ("abdul", "bangalore   ")
+    ).toDF("first_name", "city")
+
+    val citiesDF = Seq(
+      ("medellin", "colombia    ", 2.5),
+      ("bangalore    ", "india", 12.3)
+    ).toDF("city", "country", "population")
+
+
+    val ppdf = peopleDF.select(concat(col("first_name"),
+      col("city")).as("FullName"))
+
+    val ccdf = citiesDF.select(concat(col("city"),
+      col("country"),col("population")).as("FullName"))
+
+    val uniondf = ppdf.union(ccdf)
+
+    uniondf.show(false)
 
   }
 }
