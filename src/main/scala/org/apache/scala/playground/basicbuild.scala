@@ -36,5 +36,9 @@ object basicbuild {
        89
      }
      println("someothervalue : "+someothervalue)
+
+     val arrayp = Array(1,3,2,8,5)
+     val arraysort=arrayp.sorted
+     arraysort.foreach(println)
    }
   }

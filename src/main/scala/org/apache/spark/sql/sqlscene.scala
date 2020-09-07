@@ -8,9 +8,9 @@ object sqlscene extends utility {
   def main(args: Array[String]) = {
     val sparkses = getsparses
     var q = "";
-    //    var moviesdf = sparkses.read.format("csv").option("header", true).option("InferSchema", true).load("/Users/pradeepp/Desktop/AzureProcesingframework/SparkScalaBase/resources/movies_upd.csv")
-    //    moviesdf.show(false)
-    //    moviesdf.createOrReplaceTempView("movies")
+        var moviesdf = sparkses.read.format("csv").option("header", true).option("InferSchema", true).load("/Users/pradeepp/Desktop/AzureProcesingframework/SparkScalaBase/resources/movies_upd.csv")
+        moviesdf.show(false)
+        moviesdf.createOrReplaceTempView("movies")
 
     //   *******************************Find Duplicate Values*******************
     //       sparkses.sql("select * from (select * , row_number() over(partition by movie order by movie) as movierank from movies ) where movierank = 1").show(false)
@@ -21,6 +21,8 @@ object sqlscene extends utility {
     //    //   Not a proper Solution
     //       sparkses.sql("select a.*  from movies a group by movie").show(false)
 
+    //    q = "select * from (select * ,row_number() over (partition by movie over year desc) as movie_rank from  movies )" +
+    //      "where movie_rank >1"
 
     //   *************** Remove duplicate vals - If Hive Write to another table , drop the first table and alter the name for new table
     //   First change the external table name to internal , then fire alter table name to change the name . Then again set it to internal
