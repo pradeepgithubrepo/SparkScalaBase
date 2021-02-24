@@ -8,14 +8,16 @@ object sqlscene extends utility {
   def main(args: Array[String]) = {
     val sparkses = getsparses
     var q = "";
-        var moviesdf = sparkses.read.format("csv").option("header", true).option("InferSchema", true).load("/Users/pradeepp/Desktop/AzureProcesingframework/SparkScalaBase/resources/movies_upd.csv")
-        moviesdf.show(false)
-        moviesdf.createOrReplaceTempView("movies")
+    var moviesdf = sparkses.read.format("csv").option("header", true).option("InferSchema", true).load("/Users/pradeepp/Desktop/AzureProcesingframework/SparkScalaBase/resources/movies_upd.csv")
 
+    moviesdf.show(false)
+    moviesdf.createOrReplaceTempView("movies")
+
+//    https://www.w3resource.com/sql-exercises/
     //   *******************************Find Duplicate Values*******************
-    //       sparkses.sql("select * from (select * , row_number() over(partition by movie order by movie) as movierank from movies ) where movierank = 1").show(false)
+    //           spark.sql("select * from (select * , row_number() over(partition by movie order by movie) as movierank from movies ) where movierank = 1").show(false)
     //
-    //       val movie_spec = Window.partitionBy("movie").orderBy("movie")
+    val movie_spec = Window.partitionBy("movie").orderBy("movie")
     //       moviesdf.withColumn("movie_rank", row_number() over(movie_spec) ).where("movie_rank = 1").show(false)
     //
     //    //   Not a proper Solution
@@ -27,6 +29,8 @@ object sqlscene extends utility {
     //   *************** Remove duplicate vals - If Hive Write to another table , drop the first table and alter the name for new table
     //   First change the external table name to internal , then fire alter table name to change the name . Then again set it to internal
     //    $$$$$$https://stackoverflow.com/a/51840429/5773418
+    //    https://dwgeek.com/identify-and-remove-duplicate-records-from-hive-table.html/
+    //        insert overwrite into table1 below_query
     //   sparkses.sql("select * from(select * , row_number() over (partition by movie order by movie) as movie_rank from movies ) where  movie_rank = 1 ").drop("movie_rank").show(false)
 
 

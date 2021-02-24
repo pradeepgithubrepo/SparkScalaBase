@@ -1,7 +1,8 @@
-package org.apache.scala.basics.allaboutscala
+package org.apache.scala.consolidated.advanced
+
 import scala.concurrent.Future
+import scala.util.{Failure, Success}
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.{Success, Failure}
 
 object futures extends App {
   //  Futures are the standard mechanism for writing multithreaded code in Scala.
@@ -12,7 +13,9 @@ object futures extends App {
   }
 
   addnum(5,10).onComplete{
-    case Success(n) => println(n)
-    case Failure(e)=> println(e)
+    case Success(n) => println("Hello"+ n)
+    case Failure(e)=> println("Pello"+e)
   }
 }
+
+

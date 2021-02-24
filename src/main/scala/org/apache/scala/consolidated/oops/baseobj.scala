@@ -1,4 +1,4 @@
-package org.apache.scala.basics.oops
+package org.apache.scala.consolidated.oops
 
 object baseobj extends App {
 

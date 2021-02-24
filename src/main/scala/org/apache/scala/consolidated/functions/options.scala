@@ -1,4 +1,4 @@
-package org.apache.scala.basics.functional
+package org.apache.scala.consolidated.functions
 
 object options extends App {
   //Objective is to guard against null pointer exception

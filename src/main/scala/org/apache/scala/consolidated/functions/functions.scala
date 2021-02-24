@@ -1,4 +1,4 @@
-package org.apache.scala.basics.allaboutscala
+package org.apache.scala.consolidated.functions
 
 import scala.annotation.tailrec
 

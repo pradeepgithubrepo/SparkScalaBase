@@ -1,4 +1,4 @@
-        package org.apache.scala.playground
+package org.apache.scala.playground
 
 import scala.annotation.tailrec
 

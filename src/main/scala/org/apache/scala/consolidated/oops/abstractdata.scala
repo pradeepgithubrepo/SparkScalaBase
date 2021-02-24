@@ -1,4 +1,4 @@
-package org.apache.scala.basics.oops
+package org.apache.scala.consolidated.oops
 
 object abstractdata extends App {
 
@@ -72,4 +72,28 @@ abstract class myauthor(name: String,
       print(eat)
     }
   }
+}
+
+abstract class abs(a : Int) {
+  val b = 10;
+  def compare() : String
+}
+
+class intermediate (a : Int) extends abs(a : Int) {
+  val q = a
+  override def compare(): String = {
+    var aval = ""
+    if ( q > b ) {
+      aval = "This is great"
+    }else
+    {
+      aval = "This does't work"
+    }
+    aval
+  }
+}
+
+object mainclass extends App {
+  val obj = new intermediate(15);
+  println(obj.compare());
 }

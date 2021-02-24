@@ -13,6 +13,19 @@ object interview extends App with utility {
     (4, 1, 1, "emp3", 95000),
     (5, 1, 1, "emp4", 75000)
   ).toDF("emp_id", "dept_id", "boss_id", "name", "salary")
+
+  salarydf.show(false)
+
+  var emptydf: DataFrame = null
+  emptydf=salarydf
+ if(emptydf != null) {
+   if(!emptydf.rdd.isEmpty())
+     {
+       emptydf.show(false)
+     }
+ }else{
+   println("Empty DF handled")
+ }
   var q = ""
   salarydf.createOrReplaceTempView("salary")
   q = "select b.name from salary a inner join salary b on a.emp_id = b.boss_id where a.salary < b.salary"

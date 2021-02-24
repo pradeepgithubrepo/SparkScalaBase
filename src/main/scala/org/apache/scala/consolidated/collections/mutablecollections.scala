@@ -1,7 +1,6 @@
-package org.apache.scala.basics.allaboutscala
+package org.apache.scala.consolidated.collections
 
-import scala.collection.mutable.Map
-import scala.collection.mutable.{ListBuffer,ArrayBuffer,Set}
+import scala.collection.mutable.{ArrayBuffer, ListBuffer, Map, Set}
 
 object mutablecollections extends App {
 
@@ -29,7 +28,7 @@ object mutablecollections extends App {
   println(aarraybuffer)
 
   println("************************************** Set  *************************")
-  val aset = Set(1,2,3,3)
+  val aset = Set(1,2,3)
   aset += 5
   println(aset)
 
